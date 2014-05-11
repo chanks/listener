@@ -74,6 +74,6 @@ describe Listener do
     t.join
 
     $conn1.async_exec("select pg_listening_channels()").to_a.length.should == 0
-    $conn1.wait_for_notify(0.1).should be nil
+    $conn1.wait_for_notify(0.001).should be nil
   end
 end
